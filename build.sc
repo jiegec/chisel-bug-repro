@@ -10,9 +10,6 @@ val defaultVersions = Map(
   "chisel-plugin" -> ("org.chipsalliance", "5.0.0", true),
   "chiseltest" -> ("edu.berkeley.cs", "5.0.0", false),
   "scalatest" -> ("org.scalatest", "3.2.10", false),
-  "spinalhdl-core" -> ("com.github.spinalhdl", "1.8.1", false),
-  "spinalhdl-lib" -> ("com.github.spinalhdl", "1.8.1", false),
-  "spinalhdl-idsl-plugin" -> ("com.github.spinalhdl", "1.8.1", false)
 )
 
 val commonScalaVersion = "2.13.10"
@@ -44,12 +41,9 @@ object `bug-repro` extends CommonModule with ScalafmtModule {
   override def ivyDeps = super.ivyDeps() ++ Agg(
     getVersion("chisel"),
     getVersion("chiseltest"),
-    getVersion("spinalhdl-core"),
-    getVersion("spinalhdl-lib")
   )
 
   override def scalacPluginIvyDeps = super.scalacPluginIvyDeps() ++ Agg(
-    getVersion("spinalhdl-idsl-plugin"),
     getVersion("chisel-plugin")
   )
 
